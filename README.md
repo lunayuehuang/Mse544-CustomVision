@@ -7,7 +7,7 @@ Hello
 
 About Custom Vision 
 
-test
+test2
 
 
 # Tutorial Part 1 
