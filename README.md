@@ -1,4 +1,4 @@
-![Tux, the Linux mascot](/Images/part1_1.jpeg)
+attach image example, delete before publish to students, ![Tux, the Linux mascot](/Images/part1_1.jpeg)
 
 
 # Azure Custom Vision for Materials Science
