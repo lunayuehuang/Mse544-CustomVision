@@ -1,13 +1,7 @@
-attach image example, delete before publish to students, ![Tux, the Linux mascot](/Images/part1_1.jpeg)
+<img src="./Images/AzureCustomVision.png" style = "width:100%;">
 
 
 # Azure Custom Vision for Materials Science
-
-Hello2
-
-About Custom Vision 
-
-test2
 
 
 # Tutorial Part 1 
