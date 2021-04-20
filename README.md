@@ -3,6 +3,8 @@
 
 # Azure Custom Vision for Materials Science
 
+Before getting started, git clone or download this repository (https://github.com/lunayuehuang/Mse544-CustomVision.git) to have all the test data on your local machine.
+
 
 # Tutorial Part 1
 ## Using Azure Custom Vision to do Image Classification 
@@ -73,12 +75,17 @@ It will automatically run the image classification on the selected image, and ou
 
 
 
-
-
-
 # Tutorial Part 2 
 ## Using Azure Custom Vision to do image object detection 
-### 2.1 Using imageJ to label image for Object Detection 
+
+### 2.1 Create a object detection project using Azure Custom Vision web interface 
+
+Similar as step 1.2, we will create a object detection project instead, and the entries of prompted window are filled as:
+
+<img src="./Images/CV_create_object_detection_project.png" style="height: 70%; width: 70%;"/>
+
+
+### 2.2 Using imageJ to label images for Object Detection 
 #### Install ImageJ 
 
 To install ImageJ, check this website [https://imagej.nih.gov/ij/download.html](https://imagej.nih.gov/ij/download.html)
@@ -88,21 +95,35 @@ If you are mac user, you might need to enable installation of applications from 
  The user interface of ImageJ looks like this:
 <img src="./Images/part2_option2_step2_1.png" style="height: 60%; width: 60%;"/>
 
-Before labeling, go to ```Analyze``` $->$ ```Set Measurement```. In the popped window, choose ```Bounding rectangle``` and ```Add to overlay```. and then click ```ok```
+#### Change measurement settings
+Before labeling, go to ```Analyze``` > ```Set Measurement```: 
+<img src="./Images/imagej_set_measurement.png" style="height: 60%; width: 60%;"/>
+
+In the prompted window, choose ```Bounding rectangle``` and ```Add to overlay```, then click ```ok```
 
 <img src="./Images/part2_option2_step2_2.png" style="height: 40%; width: 40%;"/>
 
-#### Download the dataset
+#### Label molecules in images
 
-Creat a folder on your local drive for this example name (YourNetID_ObjectDetection). Please download molecules' image data set from here: https://github.com/lunayuehuang/Mse544-CustomVision/tree/main/molecules to YourNetID_ObjectDetection/molecures 
+For each of the images, the labeling work flow is generally:
 
-Then, use ```File``` $->$ ```Open``` to open one image, and use ```Rectangle``` (the most left one botton) selection tool to select an area with just one molecule, then press M on your keyboard. It should pop out a ```Results``` window that contains the boxes information. Once all the molecule are labeled, save the measurement as a text file (ending with .txt) in an other folder YourNetID_ObjectDetection/ImagePractice. Each image should have one text file with a correspondent name (same name different file type). Repeat the process and generate a txt files for at least 3 images as practice. 
+- i. Open images using ```File``` > ```Open```, and locate a image in the folder ```molecules```
+<img src="./Images/imagej_open_an_image.png" style="height: 60%; width: 60%;"/>
 
-To save time for this tutorial, we have labeled all images. To continue this tuorial, please download the lable images to the same folder of your molecules image folder (not the ImagePractice Folder)  https://github.com/lunayuehuang/Mse544-CustomVision/tree/main/labels
 
-<img src="./Images/part2_option2_step2_3.png" style="height: 80%; width: 70%;"/>
+- ii. Use ```Rectangle``` selection tool and select on image with only one molecule, and then press M on your keyboard. A ```Results``` window will be prompted out with all the rectangle coordinates. Repeat this step until all the molecules in the image are labeled.
+<img src="./Images/imagej_label_molecules.png" style="height: 80%; width: 80%;"/>
+<img src="./Images/imagej_results.png" style="height: 50%; width: 50%;"/>
 
-### 2.2 Upload labeled data for training 
+- iii. Select the ```Results``` window and right click, choose the ```Save``` to save labels as a text file. Normally file name will be same as the image but with an extention as  ```.txt```.
+<img src="./Images/imagej_save_results_1.png" style="height: 50%; width: 50%;"/>
+<img src="./Images/imagej_save_results_2.png" style="height: 90%; width: 90%;"/>
+
+To save time for this tutorial, we have labeled all images under ```molecules/labels```. However, to ensure you familiar with this work flow, choose at least 3 images for practice this workflow. 
+
+### 2.3 Upload images with labels for training
+
+
 
 
 
