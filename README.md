@@ -69,7 +69,7 @@ For example, click ```Quick Test```,
 Then in the propmted window, choose ```Browse local files```, and select one of the image from test folders.
 <img src="./Images/CV_classification_prediction_window.png" style="height: 100%; width: 100%;"/>
 
-It will automatically run the image classification on the selected image, and output results as this:
+It will automatically run the image classification on the selected image, and output results look like this:
 <img src="./Images/CV_classification_prediction_result.png" style="height: 100%; width: 100%;"/>
 
 
@@ -81,7 +81,6 @@ It will automatically run the image classification on the selected image, and ou
 ### 2.1 Create a object detection project using Azure Custom Vision web interface 
 
 Similar as step 1.2, we will create a object detection project instead, and the entries of prompted window are filled as:
-
 <img src="./Images/CV_create_object_detection_project.png" style="height: 70%; width: 70%;"/>
 
 
@@ -93,15 +92,14 @@ To install ImageJ, check this website [https://imagej.nih.gov/ij/download.html](
 If you are mac user, you might need to enable installation of applications from unidentified developers by Mac. To do that, see this website https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac
 ```
  The user interface of ImageJ looks like this:
-<img src="./Images/part2_option2_step2_1.png" style="height: 60%; width: 60%;"/>
+<img src="./Images/imagej_user_interface.png" style="height: 60%; width: 60%;"/>
 
 #### Change measurement settings
 Before labeling, go to ```Analyze``` > ```Set Measurement```: 
 <img src="./Images/imagej_set_measurement.png" style="height: 60%; width: 60%;"/>
 
 In the prompted window, choose ```Bounding rectangle``` and ```Add to overlay```, then click ```ok```
-
-<img src="./Images/part2_option2_step2_2.png" style="height: 40%; width: 40%;"/>
+<img src="./Images/imagej_set_measurement_2.png" style="height: 40%; width: 40%;"/>
 
 #### Label molecules in images
 
@@ -116,8 +114,8 @@ For each of the images, the labeling work flow is generally:
 <img src="./Images/imagej_results.png" style="height: 50%; width: 50%;"/>
 
 - iii. Select the ```Results``` window and right click, choose the ```Save``` to save labels as a text file. Normally file name will be same as the image but with an extention as  ```.txt```.
-<img src="./Images/imagej_save_results_1.png" style="height: 50%; width: 50%;"/>
-<img src="./Images/imagej_save_results_2.png" style="height: 90%; width: 90%;"/>
+<img src="./Images/imagej_save_results_1.png" style="height: 40%; width: 40%;"/>
+<img src="./Images/imagej_save_results_2.png" style="height: 70%; width: 70%;"/>
 
 To save time for this tutorial, we have labeled all images under ```molecules/labels```. However, to ensure you familiar with this work flow, choose at least 3 images for practice this workflow. 
 
@@ -198,7 +196,7 @@ The detailed documentation are located in the file ```util.py```
     Endpoint    = '<Your_End>'
     Key         = '<Your_KEY>'
     Resource_Id = '<Your_Resource_Id>'
-    Project_Id  = '<Your_Project_Id>
+    Project_Id  = '<Your_Project_Id>'
 
     ACVObjectDetector = AzureCVObjectDetectionAPI(Endpoint, Key, Resource_Id, Project_Id)
    ```
@@ -235,9 +233,9 @@ For example, click ```Quick Test```,
 Then in the propmted window, choose ```Browse local files```, and select one of the image from test folders.
 <img src="./Images/CV_object_detection_prediction_window.png" style="height: 100%; width: 100%;"/>
 
-It will automatically run the object detection on the selected image, and output results as this:
+It will automatically run the object detection on the selected image, and output results look like this:
 <img src="./Images/CV_object_detection_prediction_result.png" style="height: 100%; width: 100%;"/>
-You can change the ```Predicted Object Threshold```, and for this simple project, choose ```90%``` as the threshold value gives pretty good results.
+You can change the ```Predicted Object Threshold```, and for this simple project, choosing ```90%``` as the threshold value gives pretty good results.
 
 
 
