@@ -17,59 +17,70 @@ Go to the Azure Custom Vision portal: [https://www.customvision.ai/](https://www
 Click the gear-like setting button, and then in the following page click ```create new``` to create a resource to host projects.  
 <img src="./Images/CV_create_resources_step1.png" style="height: 90%; width: 90%;"/>
 
-In the follwoing prompts, fill out the entries for creating the resources as:
-<img src="./Images/CV_create_resources_step2.png" style="height: 90%; width: 90%;"/>
-the name of the resoure is recommanded as ```cv_<your_UWNetID>```.
+In the following prompts, fill out the entries for creating the resources as follows, replacing the name of the Resource Group (```rg_amlclass_<your_UWNetID>```) and the name of the Resource (```cv_<your_UWNetID>```):
 
-Once the resource is created, you can find out the ```Key```, ```Endpoint``` and ```Resource Id``` as following, which will be useful when you incorporate projects using python scripts.
+<img src="./Images/CV_create_resources_step2.png" style="height: 90%; width: 90%;"/>
+
+
+Once the resource is created, you can find out the ```Key```, ```Endpoint``` and ```Resource Id``` as follows, which will be useful when you incorporate projects using python scripts.
  <img src="./Images/CV_create_resources_step3.png" style="height: 90%; width: 90%;"/>
 
 
 ### 1.2 Create a image classification project using Azure Custom Vision web interface
 
-Use the the eye-like botton on the upper right cornor to navigate back to the project gallery page (the main page). Then click ```New Project``` to create a project. 
+Use the the eye-like button on the upper right corner to navigate back to the project gallery page (the main page). Then click ```New Project``` to create a project. 
 
 <img src="./Images/CV_create_classification_project.png" style="height: 100%; width: 70%;"/>
 
 Once a project is created, go into the project page, it will looks like this:
 <img src="./Images/CV_classification_project_page.png" style="height: 90%; width: 90%;"/>
-The most important takeaway information is that the buttons on top bar navigates you to different stages of a project. 
+
+The most important takeaway is that the buttons on top bar help you navigate to different stages of the project. 
 
 
 ### 1.3 Upload images with tags and train model
 
-In this tutorial, we will be using a very small subset, with 10 clear and 10 crystals images, from MARCO to train a model. All the images are stored in ```marco_subset``` folder in this repository. Go the project page, select ```Training Images``` from the top bar, and then ```Add images```. 
+In this tutorial, we will be using a very small dataset, with 10 clear and 10 crystals images taken from the MARCO dataset to train a model. All the images are stored in ```marco_subset``` folder in this repository. Go to the project page, select ```Training Images``` from the top bar, and then ```Add images```. 
+
 <img src="./Images/CV_classification_add_images.png" style="height: 90%; width: 90%;"/>
 
-Then firstly, select all images (using ```shift``` on your keyboard) from ```macro_subset/crystatls_train``` to upload them. 
+Then, select all images (using ```shift``` on your keyboard) from ```macro_subset/crystatls_train``` to upload them. 
+
 <img src="./Images/CV_select_crystals_images.png" style="height: 90%; width: 90%;"/>
 
-In the following prompt, type ```crystals``` in the field of ```My Tags```, and then click upload.
+At the next prompt, type ```crystals``` in the field  ```"My Tags"```, and then click upload.
 <img src="./Images/CV_upload_tag_crystals_images.png" style="height: 90%; width: 90%;"/>
 
 Repeat the same step for images in ```macro_subset/clear_train``` with another tag ```clear```.
 
-Once you finish uploading and taging the images, you will find out on the left side bar, there is a summary of pictures uploaded.
+Once you finish uploading and tagging the images, you will find on the left-hand sidebar a summary of pictures uploaded.
+
 <img src="./Images/CV_classification_tags.png" style="height: 40%; width: 40%;"/>
 
-Now the model is ready for training, click the ```Train``` button on top bar and use ```Quick Training``` to train the model.
+Now, the model is ready for training. Click the ```Train``` button on the top bar and use ```Quick Training``` to train the model.
+
 <img src="./Images/CV_classification_train_1.png" style="height: 90%; width: 90%;"/>
+
 <img src="./Images/CV_classification_train_2.png" style="height: 60%; width: 60%;"/>
 
-When Training is finished (it will takes less than 5 minutes), you will obtain a page summarizing the training results and metrics.
+When training is finished (it will takes less than 5 minutes), you will obtain a page summarizing the training results and metrics.
+
 <img src="./Images/CV_classification_train_results.png" style="height: 90%; width: 90%;"/>
 
-### 1.4 Quick test on the prediction of the model
+### 1.4 Quick test - using our model for prediction
 
-Once you have a model, you can do ```Quick Test``` with images in ```macro_subset/clear_test``` and ```macro_subset/crystals_test``` to see how is this simple model performs.
+Once you have a model, you can do ```Quick Test``` with images in ```macro_subset/clear_test``` and ```macro_subset/crystals_test``` to see how this simple model performs.
 
-For example, click ```Quick Test```,  
+For example, click ```Quick Test```: 
+
 <img src="./Images/CV_classification_prediction.png" style="height: 100%; width: 100%;"/>
 
-Then in the propmted window, choose ```Browse local files```, and select one of the image from test folders.
+Then, in the window prompt, choose ```Browse local files```, and select one of the images from the test folders.
+
 <img src="./Images/CV_classification_prediction_window.png" style="height: 100%; width: 100%;"/>
 
-It will automatically run the image classification on the selected image, and output results look like this:
+It will automatically run the image classification on the selected image; the output results will look like this:
+
 <img src="./Images/CV_classification_prediction_result.png" style="height: 100%; width: 100%;"/>
 
 
@@ -78,9 +89,10 @@ It will automatically run the image classification on the selected image, and ou
 # Tutorial Part 2 
 ## Using Azure Custom Vision to do image object detection 
 
-### 2.1 Create a object detection project using Azure Custom Vision web interface 
+### 2.1 Create an object detection project using Azure Custom Vision web interface 
 
-Similar as step 1.2, we will create a object detection project instead, and the entries of prompted window are filled as:
+Similar to step 1.2, we will create a new custom vision project, but this time we will select "Object Detection" instead, as follows:
+
 <img src="./Images/CV_create_object_detection_project.png" style="height: 70%; width: 70%;"/>
 
 
@@ -89,46 +101,57 @@ Similar as step 1.2, we will create a object detection project instead, and the 
 
 To install ImageJ, check this website [https://imagej.nih.gov/ij/download.html](https://imagej.nih.gov/ij/download.html)
 ```markdown
-If you are mac user, you might need to enable installation of applications from unidentified developers by Mac. To do that, see this website https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac
+If you are mac user, you might need to enable installation of applications from unidentified developers by Apple. To do that, see this website https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac
 ```
+
  The user interface of ImageJ looks like this:
+
 <img src="./Images/imagej_user_interface.png" style="height: 60%; width: 60%;"/>
 
+####  
 #### Change measurement settings
 Before labeling, go to ```Analyze``` > ```Set Measurement```: 
+
 <img src="./Images/imagej_set_measurement.png" style="height: 60%; width: 60%;"/>
 
-In the prompted window, choose ```Bounding rectangle``` and ```Add to overlay```, then click ```ok```
+At the prompt, choose ```Bounding rectangle``` and ```Add to overlay```, then click ```ok```
+
 <img src="./Images/imagej_set_measurement_2.png" style="height: 40%; width: 40%;"/>
 
 #### Label molecules in images
 
 For each of the images, the labeling work flow is generally:
 
-- i. Open images using ```File``` > ```Open```, and locate a image in the folder ```molecules```
+1. Open images using ```File``` > ```Open```, and locate an image in the ```molecules``` folder
+
 <img src="./Images/imagej_open_an_image.png" style="height: 60%; width: 60%;"/>
 
 
-- ii. Use ```Rectangle``` selection tool and select on image with only one molecule, and then press M on your keyboard. A ```Results``` window will be prompted out with all the rectangle coordinates. Repeat this step until all the molecules in the image are labeled.
-<img src="./Images/imagej_label_molecules.png" style="height: 80%; width: 80%;"/>
-<img src="./Images/imagej_results.png" style="height: 50%; width: 50%;"/>
+2. Use the ```Rectangle``` selection tool and select on the image only one molecule, and then press M on your keyboard. A ```Results``` window will be prompted out with all the rectangle coordinates. Repeat this step until all the molecules in the image are labeled.
 
-- iii. Select the ```Results``` window and right click, choose the ```Save``` to save labels as a text file. Normally file name will be same as the image but with an extention as  ```.txt```.
+<img src="./Images/imagej_label_molecules.png" style="height: 80%; width: 80%;"/>
+
+<img src="./Images/imagej_results.png" style="height: 50%; width: 50%"/>
+
+3. Select the ```Results``` window and right click, choose ```Save As``` to save labels as a text file. The file name should be same as the image, but with an extention as  ```.txt```.
+
 <img src="./Images/imagej_save_results_1.png" style="height: 40%; width: 40%;"/>
+
 <img src="./Images/imagej_save_results_2.png" style="height: 70%; width: 70%;"/>
 
-To save time for this tutorial, we have labeled all images under ```molecules/labels```. However, to ensure you familiar with this work flow, choose at least 3 images for practice this workflow. 
+To save time for this tutorial, we have labeled all images under ```molecules/labels```. However, to ensure that you are familiar with this workflow, choose at least 3 images for practice. 
 
 ### 2.3 Upload images with labels for training
 
-#### Pre-requests
+#### Pre-requisites
 
 Install the required libraries using pip:
-- Azure Custom Vision client Library
+- Azure Custom Vision client library
 - sklearn 
 - scikit-image 
+
 ```
-pip install azure-cognitiveservices-vision-customvision sklean scikitimage
+pip install azure-cognitiveservices-vision-customvision sklearn scikitimage
 ```
 
 #### Helper Classes and Functions
@@ -145,17 +168,19 @@ and a function is included:
 The detailed documentation are located in the file ```util.py```
 
 #### Create Python scripts for image uploading
-1. Create a jupyter notebook at the same folder of this tutorial, change the name as ```image_upload.ipynb```.
 
-2. import all necessary packages and helper function/class.
-    ```
+1. Create a Jupyter notebook in the same folder as this tutorial, and name it ```image_upload.ipynb```.
+
+2. Import all necessary packages and helper functions/classes.
+    ```python
     import os
     from util import labeledImage, read_measurements, AzureCVObjectDetectionAPI
     from sklearn.model_selection import train_test_split
     ```
 
 3. Using the helper class ```labeledImage``` to store all the image labels.
-    ```
+
+    ```python
     molecules_dir = './molecules/'
     labels_dir = './molecules/labels/'
 
@@ -170,7 +195,7 @@ The detailed documentation are located in the file ```util.py```
             labeled_images[-1].add_labels(tag, read_measurements(label_path))
     ```
     you can check one of the ```labledImage``` by just calling ```print``` function:
-    ```
+    ```python
     print(labeled_images[0])
     ```
     the output should looks like:
@@ -178,63 +203,73 @@ The detailed documentation are located in the file ```util.py```
     Labeled image ma-2010-01523a_0003.jpeg
     location: ./molecules/ma-2010-01523a_0003.jpeg
     shape: (1247, 4000)
-    lables:
+    labels:
     - molecule: 
       [0, 6, 708, 1059]
       [768, 426, 1098, 555]
       [2793, 0, 1207, 1247]
-
     ```
 
-4. Split the image into training and test with the ratio of 4:1
-    ```
+4. Split the image dataset into training and test sets with the ratio of 4:1
+    ```python
     train_images, test_images = train_test_split(labeled_images, test_size=0.2, random_state=42)
     ```
 
-5. Find and fill in all the ids and credentials for your project. And then make a ```AzureCVObejectDetectionAPI``` object.
-   ```
-    Endpoint    = '<Your_End>'
-    Key         = '<Your_KEY>'
+5. Find and fill in all the ids and credentials for your project. And then make a ```AzureCVObjectDetectionAPI``` object.
+
+   ```python
+    Endpoint    = '<Your_Endpoint>'
+    Key         = '<Your_Key>'
     Resource_Id = '<Your_Resource_Id>'
     Project_Id  = '<Your_Project_Id>'
 
     ACVObjectDetector = AzureCVObjectDetectionAPI(Endpoint, Key, Resource_Id, Project_Id)
    ```
-   All those entries can be found in your obeject detection projecct at the Azure Custom Vision web interface:
+   All those entries can be found in your object detection project in the Azure Custom Vision web interface:
+
    <img src="./Images/CV_object_detection_info.png" style="height: 100%; width: 100%;"/>
 
 6. Upload the images.
-    ```
+    ```python
     ACVObjectDetector.upload_training_images(train_images)
     ```
 
-7. print out the ```test_images``` and latter will use them for quick test.
-    ```
+7. Print out the ```test_images``` and latter will use them for quick test.
+
+    ```python
     for image in test_images: print(image.name)
     ```
 
 ### 2.4 Train the model
 
-Go back to your project on Azure Custom Vision Web interface, and click ```Training```. 
+Go back to your project on Azure Custom Vision Web interface, and click ```Train```. 
+
 <img src="./Images/CV_object_detection_train_1.png" style="height: 90%; width: 90%;"/>
 
-In the prompted window, we are still using the ```Quick Training``` option. 
+At the prompt, select the ```Quick Training``` option. 
+
 <img src="./Images/CV_classification_train_2.png" style="height: 60%; width: 60%;"/>
 
-When Training is finished (it will takes about 10 to 15 minutes.), you will obtain a page summarizing the training results and metrics.
-<img src="./Images/CV_classification_train_results.png" style="height: 90%; width: 90%;"/>
+When Training is finished (it will takes about 10 to 15 minutes), you will obtain a page summarizing the training results and key performance metrics for the resulting model.
 
-### 2.5 Quick test on the prediction of the model
-Once you have a model, you can do ```Quick Test``` with ```test_images``` from the output of 2.3 step 7. 
+<img src="Images/CV_object_detection_train_results.png" style="height: 90%; width: 90%;"/>
+
+### 2.5 Quick test - prediction using our trained model
+
+Once you have a model, you can do a ```Quick Test``` with ```test_images``` from the output of 2.3 step 7. 
 
 For example, click ```Quick Test```,  
+
 <img src="./Images/CV_object_detection_prediction.png" style="height: 120%; width: 120%;"/>
 
-Then in the propmted window, choose ```Browse local files```, and select one of the image from test folders.
+Then at the prompt, choose ```Browse local files```, and select one of the image from the test folders.
+
 <img src="./Images/CV_object_detection_prediction_window.png" style="height: 100%; width: 100%;"/>
 
-It will automatically run the object detection on the selected image, and output results look like this:
+Azure Custom Vision will automatically run the object detection on the selected image, and the results will look like this:
+
 <img src="./Images/CV_object_detection_prediction_result.png" style="height: 100%; width: 100%;"/>
+
 You can change the ```Predicted Object Threshold```, and for this simple project, choosing ```90%``` as the threshold value gives pretty good results.
 
 
