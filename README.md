@@ -133,7 +133,7 @@ pip install azure-cognitiveservices-vision-customvision sklean scikitimage
 
 #### Helper Classes and Functions
 
-In order to simplify the process of using python scripts to build object detection projects on Azure Custom Vision, two helper class is built:
+In order to simplify the process of using python scripts to build object detection projects on Azure Custom Vision, two helper classes are built:
 
 - ```labeledImage```: a data structure class used for collecting the information and labels of an image.
 
