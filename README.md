@@ -126,7 +126,6 @@ For each of the images, the labeling work flow is generally:
 
 <img src="./Images/imagej_open_an_image.png" style="height: 60%; width: 60%;"/>
 
-
 2. Use the ```Rectangle``` selection tool and select on the image only one molecule, and then press M on your keyboard. A ```Results``` window will be prompted out with all the rectangle coordinates. Repeat this step until all the molecules in the image are labeled.
 
 <img src="./Images/imagej_label_molecules.png" style="height: 80%; width: 80%;"/>
