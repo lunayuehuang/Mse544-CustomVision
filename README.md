@@ -170,14 +170,12 @@ The detailed documentation are located in the file ```util.py```
 #### Create Python scripts for image uploading
 
 1. Create a Jupyter notebook in the same folder as this tutorial, and name it ```image_upload.ipynb```.
-
 2. Import all necessary packages and helper functions/classes.
     ```python
     import os
     from util import labeledImage, read_measurements, AzureCVObjectDetectionAPI
     from sklearn.model_selection import train_test_split
     ```
-
 3. Using the helper class ```labeledImage``` to store all the image labels.
 
     ```python
