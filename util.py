@@ -6,7 +6,16 @@ from msrest.authentication import ApiKeyCredentials
 from skimage import io
 
 def read_measurements(filename):
+    """
+    A helper function to read all the rectangular boxes
+    Args:
+    ----
+    filename: str, the file path that contains the all rectangular boxes coordinates 
     
+    Return:
+    ----
+    list of list
+    """
     measurements = []
     measure = []
     with open(filename, 'r') as f:
@@ -20,12 +29,33 @@ def read_measurements(filename):
     return measurements 
 
 def normalize_coordinates(inp, shape):
+    """
+    A helper function to normalize the box coordiantes
+    Args:
+    ----
+    inp: list of int with dimension 4, the raw coordiantes of a rectangular box
+    shape: a list or tuple with dimension at least 2, contains the shape of the image 
+
+    Return:
+    ----
+    list of float with dimension 4, the relative coordiantes of a rectangular box 
+    """
+    
     return [inp[0] / shape[1], inp[1] / shape[0], 
             inp[2] / shape[1], inp[3] / shape[0]]
 
-# a data structure class to store data of Images
 class labeledImage():
+    """
+     a data structure class to store information of a labeled images     
+    """
+    
     def __init__(self, image_path):
+        """
+        Class Constructor
+        Args:
+        ----
+        image_path: str, a path where an image is stored
+        """
         self.path = image_path
         self.name = image_path.split('/')[-1] 
         self.shape = io.imread(image_path).shape
@@ -34,6 +64,15 @@ class labeledImage():
         return
 
     def add_labels(self, tag, regions):
+        """
+        Add lablels to the image
+        Args:
+        ----
+        tag: str, label name
+        regions: list of list, the inner list should have dimension of 4 that
+                 contains the [BX, BY, Wihth, Height] of a retangular box 
+        """
+        
         if tag not in self.labels.keys():
             self.labels[tag] = regions
         else:
@@ -42,6 +81,11 @@ class labeledImage():
         return
 
     def __str__(self):
+        """
+        Overriding the printing function, such that when calling
+        print(labeledImage) will give all the information
+        """
+        
         print_str = 'Labeled image ' + self.name + '\n'
         print_str += '    location: ' + self.path + '\n'
         print_str += '    shape: ' + str(self.shape) + '\n'
@@ -60,6 +104,17 @@ class AzureCVObjectDetectionAPI(object):
     
 
     def __init__(self, endpoint, key, resource_id, project_id=None):
+        """ 
+        Class Constructor, takes the id from Azure Custom Vision. Here the key will
+        be used both for training and predicition
+        
+        Args:
+        ----
+        endpoint: str
+        key: str
+        resource_id: str
+        project_id: str
+        """
 
         training_credentials   = ApiKeyCredentials(in_headers={"Training-key": key})
         prediction_credentials = ApiKeyCredentials(in_headers={"Prediction-key": key})
@@ -76,6 +131,14 @@ class AzureCVObjectDetectionAPI(object):
         return
 
     def create_project(self, project_name):
+        """
+        Create a object detection project with name as project_name. Swith to this project
+        when creation is complete.
+
+        Args:
+        ----
+        project_name: str
+        """
         # Find the object detection domain
         obj_detection_domain = next(domain for domain in trainer.get_domains() 
                                     if domain.type == "ObjectDetection" and domain.name == "General")
@@ -88,6 +151,13 @@ class AzureCVObjectDetectionAPI(object):
         return
 
     def create_tag(self, tag_name):
+        """
+        Create a tag at the current object detection project.
+
+        Args:
+        ----
+        project_name: str
+        """
         assert (self.project_id is not None)
         tag = self.trainer.create_tag(self.project_id, tag_name)
         self.tags[tag.name] = tag.id
@@ -95,6 +165,16 @@ class AzureCVObjectDetectionAPI(object):
         return
 
     def _upload_one_batch_training_images(self, tagged_images_with_regions):
+        """
+        Upload one batch (maximum 64) training images to Azure Custom Vision Object Detection.
+        Only for internal use with in this class.
+        
+        Args:
+        ----
+        tagged_images_with_regions: list of ImageFileCreateEntry 
+        
+        """
+        
         upload_result = self.trainer.create_images_from_files(
             self.project_id, ImageFileCreateBatch(images=tagged_images_with_regions))
         
@@ -106,6 +186,14 @@ class AzureCVObjectDetectionAPI(object):
         return
 
     def upload_training_images(self, training_labeled_images):
+        """
+        Upload training images to Azure Custom Vision Object Detection.
+        
+        Args:
+        ----
+        training_lableded_images: list of labeledImage
+        """
+        assert (self.project_id is not None)
         
         print ("Adding images...")
         tagged_images_with_regions = []
