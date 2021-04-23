@@ -150,7 +150,7 @@ Install the required libraries using pip:
 - scikit-image 
 
 ```
-pip install azure-cognitiveservices-vision-customvision sklearn scikitimage
+pip install azure-cognitiveservices-vision-customvision sklearn scikit-image
 ```
 
 #### Helper Classes and Functions
