@@ -153,16 +153,15 @@ Install the required libraries using pip:
 pip install azure-cognitiveservices-vision-customvision sklearn scikit-image
 ```
 
-#### Helper Classes and Functions
+#### Helper Classes
 
 In order to simplify the process of using python scripts to build object detection projects on Azure Custom Vision, two helper classes are built:
 
-- ```labeledImage```: a data structure class used for collecting the information and labels of an image.
+- ```labeledImage```: a data structure class used for collecting the information and labels of an image. Within this class, a function is included:
+    - ```add_labels_from_file(str tag, str label_path)```: a helper function to read all the rectangular boxes in ImageJ format, note all of them should be associate with the same tag. 
 
-- ```AzureCVObjectDetectionAPI```: an API class that simplifies the process of creating project, uploading images and performing batch prediction for object detection on Azure Custom Vision  
-
-and a function is included:
-- ```read_measurements```: a helper function to read all the rectangular boxes
+- ```AzureCVObjectDetectionAPI```: an API class that simplifies the process of creating project, uploading images and performing batch prediction for object detection on Azure Custom Vision. And once you got all the image and labels into a list of ```labeledImage```, use:
+    - ```upload_training_images(List(ImagesLables) labeled_images)```, upload labeled images to current project.
 
 The detailed documentation are located in the file ```util.py```
 
@@ -172,7 +171,8 @@ The detailed documentation are located in the file ```util.py```
 2. Import all necessary packages and helper functions/classes.
     ```python
     import os
-    from util import labeledImage, read_measurements, AzureCVObjectDetectionAPI
+    from util import labeledImage
+    from azueapi import AzureCVObjectDetectionAPI
     from sklearn.model_selection import train_test_split
     ```
 3. Using the helper class ```labeledImage``` to store all the image labels.
@@ -189,7 +189,7 @@ The detailed documentation are located in the file ```util.py```
             image_path = os.path.join(molecules_dir, file)
             label_path = os.path.join(labels_dir, file.split('.')[0] + '.txt')
             labeled_images.append(labeledImage(image_path))
-            labeled_images[-1].add_labels(tag, read_measurements(label_path))
+            labeled_images[-1].add_labels_from_file(tag, label_path)
     ```
     you can check one of the ```labledImage``` by just calling ```print``` function:
     ```python
