@@ -270,10 +270,13 @@ Azure Custom Vision will automatically run the object detection on the selected 
 You can change the ```Predicted Object Threshold```, and for this simple project, choosing ```90%``` as the threshold value gives pretty good results.
 
 
+## Reference and Further Reading
 
+[https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier)
 
+[https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/get-started-build-detector](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/get-started-build-detector)
 
+[https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/quickstarts/image-classification?tabs=visual-studio&pivots=programming-language-python](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/quickstarts/image-classification?tabs=visual-studio&pivots=programming-language-python)
 
+[https://docs.microsoft.com/en-us/python/api/overview/azure/ml/install?view=azure-ml-py](https://docs.microsoft.com/en-us/python/api/overview/azure/ml/install?view=azure-ml-py)
 
-
- 
