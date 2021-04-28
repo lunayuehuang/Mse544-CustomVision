@@ -4,6 +4,8 @@ from azure.cognitiveservices.vision.customvision.prediction import CustomVisionP
 from azure.cognitiveservices.vision.customvision.training.models import ImageFileCreateBatch, ImageFileCreateEntry, Region
 from msrest.authentication import ApiKeyCredentials
 from skimage import io
+import os
+
 
 def read_measurements(filename):
     """
@@ -79,6 +81,16 @@ class labeledImage():
             self.labels[tag] += regions
 
         return
+    
+    def add_labels_from_file(self, tag, filename):
+        """
+        Add labels form a file
+
+        """
+        self.add_labels(tag, read_measurements(filename)) 
+        
+        return
+        
 
     def __str__(self):
         """
@@ -96,6 +108,51 @@ class labeledImage():
                 print_str += '      ' + str(l) + '\n'
         
         return print_str 
+
+def convert_to_yolo_format(labeled_images, output_path=None, tags=None):
+    """ 
+    This function converts a list of images labels 
+      from ImageJ format: absolute coordinates [Begin_X, Begin_Y, Width, Height]
+      to yolo format:     relative coordinates [Center_X, Center_Y, Width, Height] 
+    
+    Args:
+    ----
+    labeled_images: list of labledImage
+    output_path:  str, by default it will save to the same directory when you execute
+                       this script
+    tags: pre-assigned tags
+    """
+    
+    # collection all the labels
+    if tags is None:
+        tags = set()
+        for img in labeled_images:
+            tags.update(img.labels.keys())
+    
+        tags = list(tags)
+    
+    # generate yolo labels for each labeled_images
+    if output_path is None:
+        output_path = '.'
+    
+    for img in labeled_images:
+        fname = os.path.join(output_path, img.name.split('.')[0] + '.txt')
+        
+        
+        with open(fname, 'w') as f:
+            for tag, labels in img.labels.items():
+                tag_id = tags.index(tag)
+                for l in labels:
+                    # compute relative coordinates
+                    bx, by, w, h = normalize_coordinates(l, img.shape)
+                    cx = bx + w / 2.0
+                    cy = by + h / 2.0
+                    
+                    f.write('%d %.6f %.6f %.6f %.6f \n' %(tag_id, cx, cy, w, h)) 
+        
+        print('successfully generated labels for image ', img.name)
+    
+    return tags
 
 class AzureCVObjectDetectionAPI(object):
     """
