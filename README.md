@@ -5,11 +5,27 @@
 
 Before getting started, git clone or download this repository (https://github.com/lunayuehuang/Mse544-CustomVision.git) to have all the test data on your local machine.
 
+# Table of Content
+- [Part 1 Using Azure Custom Vision to do Image Classification](#part1)
+  - [1.1 Create resources on Azure Custom Vision](#part1_1)
+  - [1.2 Create a image classification project using Azure Custom Vision web interface](#part1_2)
+  - [1.3 Upload images with tags and train model](#part1_3)
+  - [1.4 Quick test - using our model for prediction](#part1_4)
+- [Part 2 Using Azure Custom Vision to do image object detection](#part2)
+  - [2.1 Create an object detection project using Azure Custom Vision web interface](#part2_1)
+  - [2.2 Using ImageJ to label images for Object Detection](#part2_2)
+  - [2.3 Upload images with labels for training](#part2_3)
+  - [2.4 Train the model](#part2_4)
+  - [2.5 Quick test - prediction using our trained model](#part2_5)
+- [Reference and Further Reading](#reference)
+
+
+
 
 # Tutorial Part 1
-## Using Azure Custom Vision to do Image Classification 
+## Using Azure Custom Vision to do Image Classification  <a name="part1"></a>
 
-### 1.1 Create resources on Azure Custom Vision.
+### 1.1 Create resources on Azure Custom Vision <a name="part1_1"></a>
 
 Go to the Azure Custom Vision portal: [https://www.customvision.ai/](https://www.customvision.ai/) and sign in with your uw-email (it will automatically re-direct you to the UWID authentication page). The main page of the Azure Custom Vision looks like this:
 <img src="./Images/AzureCVInterface.png" style="height: 90%; width: 90%;"/>
@@ -26,7 +42,7 @@ Once the resource is created, you can find out the ```Key```, ```Endpoint``` and
  <img src="./Images/CV_create_resources_step3.png" style="height: 90%; width: 90%;"/>
 
 
-### 1.2 Create a image classification project using Azure Custom Vision web interface
+### 1.2 Create a image classification project using Azure Custom Vision web interface <a name="part1_2"></a>
 
 Use the the eye-like button on the upper right corner to navigate back to the project gallery page (the main page). Then click ```New Project``` to create a project. 
 
@@ -38,7 +54,7 @@ Once a project is created, go into the project page, it will looks like this:
 The most important takeaway is that the buttons on top bar help you navigate to different stages of the project. 
 
 
-### 1.3 Upload images with tags and train model
+### 1.3 Upload images with tags and train model <a name="part1_3"></a>
 
 In this tutorial, we will be using a very small dataset, with 10 clear and 10 crystals images taken from the MARCO dataset to train a model. All the images are stored in ```marco_subset``` folder in this repository. Go to the project page, select ```Training Images``` from the top bar, and then ```Add images```. 
 
@@ -67,7 +83,7 @@ When training is finished (it will takes less than 5 minutes), you will obtain a
 
 <img src="./Images/CV_classification_train_results.png" style="height: 90%; width: 90%;"/>
 
-### 1.4 Quick test - using our model for prediction
+### 1.4 Quick test - using our model for prediction <a name="part1_4"></a>
 
 Once you have a model, you can do ```Quick Test``` with images in ```macro_subset/clear_test``` and ```macro_subset/crystals_test``` to see how this simple model performs.
 
@@ -87,16 +103,16 @@ It will automatically run the image classification on the selected image; the ou
 
 
 # Tutorial Part 2 
-## Using Azure Custom Vision to do image object detection 
+## Using Azure Custom Vision to do image object detection <a name="part2"></a>
 
-### 2.1 Create an object detection project using Azure Custom Vision web interface 
+### 2.1 Create an object detection project using Azure Custom Vision web interface <a name="part2_1"></a>
 
 Similar to step 1.2, we will create a new custom vision project, but this time we will select "Object Detection" instead, as follows:
 
 <img src="./Images/CV_create_object_detection_project.png" style="height: 70%; width: 70%;"/>
 
 
-### 2.2 Using ImageJ to label images for Object Detection 
+### 2.2 Using ImageJ to label images for Object Detection <a name="part2_2"></a>
 #### Install ImageJ 
 
 To install ImageJ, check this website [https://imagej.nih.gov/ij/download.html](https://imagej.nih.gov/ij/download.html)
@@ -140,7 +156,7 @@ For each of the images, the labeling work flow is generally:
 
 To save time for this tutorial, we have labeled all images under ```molecules/labels```. However, to ensure that you are familiar with this workflow, choose at least 3 images for practice. 
 
-### 2.3 Upload images with labels for training
+### 2.3 Upload images with labels for training <a name="part2_3"></a>
 
 #### Pre-requisites
 
@@ -237,7 +253,7 @@ The detailed documentation are located in the file ```util.py```
     for image in test_images: print(image.name)
     ```
 
-### 2.4 Train the model
+### 2.4 Train the model <a name="part2_4"></a>
 
 Go back to your project on Azure Custom Vision Web interface, and click ```Train```. 
 
@@ -251,7 +267,7 @@ When Training is finished (it will takes about 10 to 15 minutes), you will obtai
 
 <img src="Images/CV_object_detection_train_results.png" style="height: 90%; width: 90%;"/>
 
-### 2.5 Quick test - prediction using our trained model
+### 2.5 Quick test - prediction using our trained model <a name="part2_5"></a>
 
 Once you have a model, you can do a ```Quick Test``` with ```test_images``` from the output of 2.3 step 7. 
 
@@ -270,7 +286,7 @@ Azure Custom Vision will automatically run the object detection on the selected 
 You can change the ```Predicted Object Threshold```, and for this simple project, choosing ```90%``` as the threshold value gives pretty good results.
 
 
-## Reference and Further Reading
+## Reference and Further Reading <a name="reference"></a>
 
 [https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier)
 
