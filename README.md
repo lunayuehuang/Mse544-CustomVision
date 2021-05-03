@@ -285,6 +285,10 @@ Azure Custom Vision will automatically run the object detection on the selected 
 
 You can change the ```Predicted Object Threshold```, and for this simple project, choosing ```90%``` as the threshold value gives pretty good results.
 
+### Now you have completed this Tutorial, Congratulations! 
+
+### Challenge question: Use the inference endpoint from Custom Vision to label some of the images from python notebook. 
+
 
 ## Reference and Further Reading <a name="reference"></a>
 
