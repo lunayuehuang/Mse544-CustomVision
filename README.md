@@ -188,7 +188,7 @@ The detailed documentation are located in the file ```util.py```
     ```python
     import os
     from util import labeledImage
-    from azueapi import AzureCVObjectDetectionAPI
+    from azureapi import AzureCVObjectDetectionAPI
     from sklearn.model_selection import train_test_split
     ```
 3. Using the helper class ```labeledImage``` to store all the image labels.
