@@ -3,6 +3,8 @@
 
 # Azure Custom Vision for Materials Science
 
+Authors: [Hang Hu](https://github.com/hanghu) & [Luna Huang](https://github.com/lunayuehuang) 
+
 Before getting started, git clone or download this repository (https://github.com/lunayuehuang/Mse544-CustomVision.git) to have all the test data on your local machine.
 
 # Table of Content
