@@ -183,7 +183,7 @@ In order to simplify the process of using python scripts to build object detecti
 - ```AzureCVObjectDetectionAPI```: an API class that simplifies the process of creating project, uploading images and performing batch prediction for object detection on Azure Custom Vision. And once you got all the image and labels into a list of ```labeledImage```, use:
     - ```upload_training_images(List(ImagesLables) labeled_images)```, upload labeled images to current project.
 
-The detailed documentation are located in the file ```util.py```
+The detailed documentation are located in the files ```util.py``` and ```azureapi.py```
 
 #### Create Python scripts for image uploading
 
