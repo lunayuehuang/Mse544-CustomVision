@@ -296,6 +296,7 @@ You can change the ```Predicted Object Threshold```, and for this simple project
 ## Reference and Further Reading <a name="reference"></a>
 
 [https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier)
+
 [https://docs.microsoft.com/en-us/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.training.models.imagefilecreatebatch?view=azure-python](https://docs.microsoft.com/en-us/python/api/azure-cognitiveservices-vision-customvision/azure.cognitiveservices.vision.customvision.training.models.imagefilecreatebatch?view=azure-python)
 
 [https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/get-started-build-detector](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/get-started-build-detector)
