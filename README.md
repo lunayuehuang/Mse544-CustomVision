@@ -163,27 +163,27 @@ To save time for this tutorial, we have labeled all images under ```molecules/la
 Create a Jupyter notebook in the same folder as this tutorial, and name it ```image_upload.ipynb```. The quickest way I would like to do this in VS Code is to use Command Palette by "Command+Shift+p (Mac)" or "Ctrl+Shift+p (PC)" and type "notebook" in the Command Palette, and then choose the "Jupyter: Create New Jupyter Notebook" from the prompt. Don't forget to save the notebook in the folder you created for this tutorial. 
 
 #### Pre-requisites
-Python constantly evolve and progress. Sometime, it is challenging to always obtain consistant experience running the notebook. To make sure the code will run smoothly no matter what version of your python you newly installed, it is nice to learn how to establish python envrionment inside of your code. So let's spend a few mintues first to learn how create and active an conda envrionment. 
+Python constantly evolves and progresses. Sometimes, it is challenging to obtain consistent experience running the notebook. To make sure the code will run smoothly no matter what version of python you newly installed, it is nice to learn how to establish python environment on your computer. So let's spend a few minutes first to learn how to create and activate a conda environment. 
 
 First, make sure you have already installed [Anaconda](https://www.anaconda.com/products/distribution) or [miniconda](https://docs.conda.io/en/latest/miniconda.html). 
 
-then create envrionment named MSE544CVpy310 (feel free to replace "MSE544CVpy310" in the code with any name you want to give your envrionment for this notebook) 
+Then create an environment named MSE544CVpy310 (feel free to replace "MSE544CVpy310" in the code with any name you want to give your environment for this notebook) 
 
 ```
 conda create -n MSE544CVpy310 python=3.10
 ```
-Relode the developer window of VScode 
+Reload the developer window of VScode 
 
-then renew a new cell and run the following commandes in your python notebook 
+Then create a new cell and run the following command in your python notebook 
 
 ```
 conda activate MSE544CVpy310
 ```
-In your VSCode, click the kernal section button at the right coner of notebook window, and choose MSE544CVpy310 as your python envrionment. 
+In your VSCode, click the kernel selection button at the top right corner of the notebook window, and choose MSE544CVpy310 as your python environment. 
 
-<img src="./Images/KernelSelectionButton.png" style="height: 40%; width: 40%;"/>
+<img src="./Images/KernelSelectionButton.png" style="height: 100%; width: 100%;"/>
 
-Now you have new environment set up for your notebook. 
+Now you have an new environment set up for your notebook. 
 
 Install the required libraries using pip:
 - Azure Custom Vision client library
