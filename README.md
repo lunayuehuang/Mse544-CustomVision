@@ -199,11 +199,10 @@ The main purpose of this notebook is be able to upload pre-labeled images to Azu
 
 In order to simplify the process of using python scripts to build object detection projects on Azure Custom Vision, two helper classes are built:
 
-- ```labeledImage```: a data structure class used for collecting the information and labels of an image. Within this class, a function is included:
+- ```labeledImage``` in the util.py: a data structure class used for collecting the information and labels of an image. Within this class, a function is included:
     - ```add_labels_from_file(str tag, str label_path)```: a helper function to read all the rectangular boxes in ImageJ format, note all of them should be associate with the same tag. 
 
-- ```AzureCVObjectDetectionAPI```: an API class that simplifies the process of creating project, uploading images and performing batch prediction for object detection on Azure Custom Vision. And once you got all the image and labels into a list of ```labeledImage```, use:
-    - ```upload_training_images(List(ImagesLables) labeled_images)```, upload labeled images to current project.
+- ```AzureCVObjectDetectionAPI``` in the azureapi.py: an API class that simplifies the process of identifying which Azure Custom Vision Project you are doing, and uploading images with the labels to that object for object detection in batches for object detection training. The code - ```upload_training_images(List(ImagesLables) labeled_images)``` will upload labeled images to your project.
 
 The detailed documentation are located in the files ```util.py``` and ```azureapi.py```
 
