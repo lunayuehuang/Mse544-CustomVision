@@ -183,7 +183,7 @@ In your VSCode, click the kernel selection button at the top right corner of the
 
 <img src="./Images/KernelSelectionButton.png" style="height: 100%; width: 100%;"/>
 
-Now you have an new environment set up for your notebook. 
+Now you have an new environment set up for your notebook. You can always use this environment to run this code. 
 
 Install the required libraries using pip:
 - Azure Custom Vision client library
@@ -193,7 +193,7 @@ run the following commands in your python notebook
 ```
 %pip install azure-cognitiveservices-vision-customvision sklearn scikit-image
 ```
-The main purpose of this notebook is be able to creat import pre-labelled images to Azure Custom Vision. We need to read the image path, labeled object and its location in the images (coordinates for the left bottom corner), and its width and height into a data frame which Custom Vision API will loop through and uplode the images and annotations.  
+The main purpose of this notebook is be able to upload pre-labeled images to Azure Custom Vision. We need to read the image path, labeled object and  location and the size of labels in the images (coordinates for the left bottom corner and the width and height) into a data frame, the we will use loop through the datam use Custom Vision API to upload the images and annotations.  
 
 #### Helper Classes
 
