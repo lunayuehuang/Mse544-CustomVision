@@ -181,7 +181,9 @@ conda activate MSE544CVpy310
 ```
 In your VSCode, click the kernal section button at the right coner of notebook window, and choose MSE544CVpy310 as your python envrionment. 
 
+<img src="./Images/KernelSelectionButton.png" style="height: 40%; width: 40%;"/>
 
+Now you have new environment set up for your notebook. 
 
 Install the required libraries using pip:
 - Azure Custom Vision client library
@@ -191,6 +193,7 @@ run the following commands in your python notebook
 ```
 %pip install azure-cognitiveservices-vision-customvision sklearn scikit-image
 ```
+The main purpose of this notebook is be able to creat import pre-labelled images to Azure Custom Vision. We need to read the image path, labeled object and its location in the images (coordinates for the left bottom corner), and its width and height into a data frame which Custom Vision API will loop through and uplode the images and annotations.  
 
 #### Helper Classes
 
