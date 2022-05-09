@@ -3,7 +3,7 @@ import os
 
 def read_measurements(filename):
     """
-    A helper function to read all the rectangular boxes
+    A helper function to read all the rectangular boxes produced by ImageJ
     Args:
     ----
     filename: str, the file path that contains the all rectangular boxes coordinates 
@@ -15,21 +15,25 @@ def read_measurements(filename):
     measurements = []
     measure = []
     with open(filename, 'r') as f:
+        # Skip first 2 lines of the file; they do not contain actual data
         line = f.readline()
         line = f.readline()
+        # Start processing any non-empty line
         while line != "":
-            entires = line.split()
-            measurements.append(list(map(int, entires[1:])))
+            # Split the line into an array. 
+            entries = line.split()
+            # Add the data from that specific line into the measurements array
+            measurements.append(list(map(int, entries[1:])))
             line = f.readline()
 
     return measurements 
 
 def normalize_coordinates(inp, shape):
     """
-    A helper function to normalize the box coordiantes
+    A helper function to normalize the box coordinates within the image.
     Args:
     ----
-    inp: list of int with dimension 4, the raw coordiantes of a rectangular box
+    inp: list of int with dimension 4, the raw coordinates of a rectangular box
     shape: a list or tuple with dimension at least 2, contains the shape of the image 
 
     Return:
@@ -95,7 +99,7 @@ class labeledImage():
         print_str = 'Labeled image ' + self.name + '\n'
         print_str += '    location: ' + self.path + '\n'
         print_str += '    shape: ' + str(self.shape) + '\n'
-        print_str += '    lables:'  + '\n'
+        print_str += '    labels:'  + '\n'
         for t, labels in self.labels.items():
             print_str += '    - ' + str(t) + ': \n'
             for l in labels:
