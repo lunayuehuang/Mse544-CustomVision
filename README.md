@@ -35,7 +35,7 @@ Go to the Azure Custom Vision portal: [https://www.customvision.ai/](https://www
 Click the gear-like setting button, and then in the following page click ```create new``` to create a resource to host projects.  
 <img src="./Images/CV_create_resources_step1.png" style="height: 90%; width: 90%;"/>
 
-In the following prompts, fill out the entries for creating the resources as follows, replacing the name of the Resource Group (```rg_amlclass_<your_UWNetID>```) and the name of the Resource (```cv_<your_UWNetID>```):
+In the following prompts, fill out the entries for creating the resources as follows, replacing the name of the subscription with ('''MSE 544 2023'''),  the name of Resource Group with (```rg_amlclass_<your_UWNetID>```) and the name of the Resource (```cv_<your_UWNetID>```):
 
 <img src="./Images/CV_create_resources_step2.png" style="height: 90%; width: 90%;"/>
 
