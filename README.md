@@ -102,11 +102,21 @@ It will automatically run the image classification on the selected image; the ou
 
 <img src="./Images/CV_classification_prediction_result.png" style="height: 100%; width: 100%;"/>
 
+As you can see, Custom Vision really provides a code free expereience for you to easily running image classfication. 
 
 
 
 # Tutorial Part 2 
 ## Using Azure Custom Vision to do image object detection <a name="part2"></a>
+Object Detection is a computer vision technique that involves identifying and localizing objects within an image or a video. It has many applications in materials characterization data processing and materials manufacturing qaulity control. 
+
+The goal of object detection is to detect objects of interest in an image and accurately localize them by drawing bounding boxes around them. The algorithms typically consist of two main components: a feature extractor and a classifier/regressor. 
+
+Feature extractor is responsible for extracting useful features from the input images that are relevant to object detection. You can see this a serires of numerical respretatives that captures the characteristic of the images. The commone feature extraction techiniques include convolutional neural networks (CNNs) and their variants such as ResNet, VGG and inceptions. A simple explanation of CNN is included in our prerequisite class MSE 542, and a recording of it is shared on our course canvase page. 
+
+The classifer/regressor takes the extracted features and predicts the class label of each object in the image and ints corresponding bounding box coordinats. There are many different algorithems for this task as well, including region-based methods suchas Faster R-CNN and one-stage methods such YOLO and SSD. 
+
+ 
 
 ### 2.1 Create an object detection project using Azure Custom Vision web interface <a name="part2_1"></a>
 
@@ -114,10 +124,15 @@ Similar to step 1.2, we will create a new custom vision project, but this time w
 
 <img src="./Images/CV_create_object_detection_project.png" style="height: 70%; width: 70%;"/>
 
+For object detection, image labeling is a crucial step as it involves annotating an image with the locations and categories of ojects present in it. Image labeling is a manual process and it usually performed by human annotators who have domain knowlege of the searching target, or pretrained for certain datasets. The annotator needs to carelly label each object in an image. This process is time-sonsuming and expensive.   However, the training results strongly tires in with the quality of the how the images are labelled, especially how the bounding boxes are choose. Unlike segmentation, most of the ojbect detection uses rectangle bounding boxes. Labeling the images with precise bounding box around the detection ojbect is very important. Note: for some of the object, bounding box can overlap each other as long as each contains complete target ojbect.
+
+There are many softwares can help us achieve labeling of the image. ImageJ is choosen in this tutorial because it is a open-source software package and is widely used in the scientific community. 
+
+ImageJ supports a wide range of image formats, and can handle multi-dimensional images such as  time-lapse and z-stacks. It also provides comprehensive sets of tools for image analysis and prcessing, including filters, thresholding, segmentation, and measurement. It is a versatile tool that can be useful for you beyond our class. 
 
 ### 2.2 Using ImageJ to label images for Object Detection <a name="part2_2"></a>
-#### Install ImageJ 
 
+#### Install ImageJ 
 To install ImageJ, check this website [https://imagej.nih.gov/ij/download.html](https://imagej.nih.gov/ij/download.html)
 ```markdown
 If you are mac user, you might need to enable installation of applications from unidentified developers by Apple. To do that, see this website https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac
