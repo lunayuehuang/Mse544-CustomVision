@@ -204,9 +204,9 @@ conda activate MSE544CVpy310
 
 Install the required libraries using pip:
 - Azure Custom Vision client library
-- sklearn 
+- scikit-learn 
 - scikit-image 
-run the following commands in your command line interface 
+Run the following commands in your command line interface 
 ```
 pip install azure-cognitiveservices-vision-customvision 
 conda install scikit-learn scikit-image
