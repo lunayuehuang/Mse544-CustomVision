@@ -208,8 +208,8 @@ Install the required libraries using pip:
 - scikit-image 
 run the following commands in your command line interface 
 ```
-pip install azure-cognitiveservices-vision-customvision sklearn scikit-image
-conda install scikit-learn
+pip install azure-cognitiveservices-vision-customvision 
+conda install scikit-learn scikit-image
 ```
 The main purpose of this notebook is be able to upload pre-labeled images to Azure Custom Vision. We need to read the image path, labeled object and  location and the size of labels in the images (coordinates for the left bottom corner, the width and height) into a data frame, then we loop through the data frame using Custom Vision SDK library functions to upload the images and annotations.  
 
