@@ -196,7 +196,7 @@ In your VSCode, click the kernel selection button at the top right corner of the
 
 Now you have an new environment set up for your notebook. You can always use this environment to run this code. 
 
-Activate your conda environment by
+In command line, activate your conda environment by
 
 ```
 conda activate MSE544CVpy310
