@@ -183,31 +183,33 @@ Python constantly evolves and progresses. Sometimes, it is challenging to obtain
 
 First, make sure you have already installed [Anaconda](https://www.anaconda.com/products/distribution) or [miniconda](https://docs.conda.io/en/latest/miniconda.html). 
 
-Then create an environment named MSE544CVpy310 (feel free to replace "MSE544CVpy310" in the code with any name you want to give your environment for this notebook) 
+Then create an environment named MSE544CVpy310 (feel free to replace "MSE544CVpy310" in the code with any name you want to give your environment for this notebook) with jupyter package installed.
 
 ```
-conda create -n MSE544CVpy310 python=3.10
+conda create -n MSE544CVpy310 python=3.10 jupyter
 ```
-Reload the developer window of VScode 
+Reload the developer window of VScode.
 
-Then create a new cell and run the following command in your python notebook 
-
-```
-conda activate MSE544CVpy310
-```
 In your VSCode, click the kernel selection button at the top right corner of the notebook window, and choose MSE544CVpy310 as your python environment. 
 
 <img src="./Images/KernelSelectionButton.png" style="height: 100%; width: 100%;"/>
 
 Now you have an new environment set up for your notebook. You can always use this environment to run this code. 
 
+In command line, activate your conda environment by
+
+```
+conda activate MSE544CVpy310
+```
+
 Install the required libraries using pip:
 - Azure Custom Vision client library
-- sklearn 
+- scikit-learn 
 - scikit-image 
-run the following commands in your python notebook 
+Run the following commands in your command line interface 
 ```
-%pip install azure-cognitiveservices-vision-customvision scikit-learn scikit-image
+pip install azure-cognitiveservices-vision-customvision 
+conda install scikit-learn scikit-image
 ```
 The main purpose of this notebook is be able to upload pre-labeled images to Azure Custom Vision. We need to read the image path, labeled object and  location and the size of labels in the images (coordinates for the left bottom corner, the width and height) into a data frame, then we loop through the data frame using Custom Vision SDK library functions to upload the images and annotations.  
 
