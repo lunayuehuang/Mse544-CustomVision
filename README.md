@@ -47,7 +47,7 @@ Once the resource is created, you can find out the ```Key```, ```Endpoint``` and
 
 ### 1.2 Create a image classification project using Azure Custom Vision web interface <a name="part1_2"></a>
 
-Use the the eye-like button on the upper right corner to navigate back to the project gallery page (the main page). Then click ```New Project``` to create a project. 
+Use the the eye-like button on the upper left corner to navigate back to the project gallery page (the main page). Then click ```New Project``` to create a project. 
 
 <img src="./Images/CV_create_classification_project.png" style="height: 100%; width: 70%;"/>
 
