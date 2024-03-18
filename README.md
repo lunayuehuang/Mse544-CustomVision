@@ -5,6 +5,7 @@ This tutorial is designed for our Big Data and Materials Informatics students to
 # Azure Custom Vision for Materials Science
 
 Authors: [Hang Hu](https://github.com/hanghu) & [Luna Huang](https://github.com/lunayuehuang) 
+Modified by [Yueyao Fan](https://github.com/Gemstrom) in Spring 2024.
 
 Before getting started, git clone or download this repository (https://github.com/lunayuehuang/Mse544-CustomVision.git) to have all the test data on your local machine.
 
