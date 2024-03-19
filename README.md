@@ -36,7 +36,7 @@ Go to the Azure Custom Vision portal: [https://www.customvision.ai/](https://www
 Click the gear-like setting button, and then in the following page click ```create new``` to create a resource to host projects.  
 <img src="./Images/CV_create_resources_step1.png" style="height: 90%; width: 90%;"/>
 
-In the following prompts, fill out the entries for creating the resources as follows, replacing the name of the subscription with (```MSE 544 2023```),  the name of Resource Group with (```rg_amlclass_<your_UWNetID>```) and the name of the Resource (```cv_<your_UWNetID>```):
+In the following prompts, fill out the entries for creating the resources as follows, replacing the name of the subscription with (```MSE544_2024```),  the name of Resource Group with (```rg-amlclass-<your_UWNetID>```) and the name of the Resource (```cv_<your_UWNetID>```):
 
 <img src="./Images/CV_create_resources_step2.png" style="height: 90%; width: 90%;"/>
 
@@ -47,7 +47,7 @@ Once the resource is created, you can find out the ```Key```, ```Endpoint``` and
 
 ### 1.2 Create a image classification project using Azure Custom Vision web interface <a name="part1_2"></a>
 
-Use the the eye-like button on the upper right corner to navigate back to the project gallery page (the main page). Then click ```New Project``` to create a project. 
+Use the the eye-like button on the upper left corner to navigate back to the project gallery page (the main page). Then click ```New Project``` to create a project. 
 
 <img src="./Images/CV_create_classification_project.png" style="height: 100%; width: 70%;"/>
 
@@ -176,7 +176,7 @@ To save time for this tutorial, we have labeled all images under ```molecules/la
 
 ### 2.3 Upload images with labels for training <a name="part2_3"></a>
 
-Create a Jupyter notebook in the same folder as this tutorial, and name it ```image_upload.ipynb```. The quickest way I would like to do this in VS Code is to use Command Palette by "Command+Shift+p (Mac)" or "Ctrl+Shift+p (PC)" and type "notebook" in the Command Palette, and then choose the "Create:New Jupyter Notebook" from the prompt. Don't forget to save the notebook in the folder you created for this tutorial. 
+Create a Jupyter notebook in the same folder as this tutorial (/Mse544-CustomVision), and name it ```image_upload.ipynb```. The quickest way I would like to do this in VS Code is to use Command Palette by "Command+Shift+p (Mac)" or "Ctrl+Shift+p (PC)" and type "notebook" in the Command Palette, and then choose the "Create:New Jupyter Notebook" from the prompt. Don't forget to save the notebook in the folder you created for this tutorial. 
 
 #### Pre-requisites
 Python constantly evolves and progresses. Sometimes, it is challenging to obtain consistent experience running the notebook. To make sure the code will run smoothly no matter what version of python you newly installed, it is nice to learn how to establish python environment on your computer. So let's spend a few minutes first to learn how to create and activate a conda environment. 
