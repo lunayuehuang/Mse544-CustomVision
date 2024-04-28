@@ -176,7 +176,7 @@ To save time for this tutorial, we have labeled all images under ```molecules/la
 
 ### 2.3 Upload images with labels for training <a name="part2_3"></a>
 
-Create a Jupyter notebook in the same folder as this tutorial (/Mse544-CustomVision), and name it ```image_upload.ipynb```. The quickest way I would like to do this in VS Code is to use Command Palette by "Command+Shift+p (Mac)" or "Ctrl+Shift+p (PC)" and type "notebook" in the Command Palette, and then choose the "Create:New Jupyter Notebook" from the prompt. Don't forget to save the notebook in the folder you created for this tutorial. 
+Create a Jupyter notebook in the same folder as this tutorial (**/Mse544-CustomVision**), and name it ```image_upload.ipynb```. The quickest way I would like to do this in VS Code is to use Command Palette by "Command+Shift+p (Mac)" or "Ctrl+Shift+p (PC)" and type "notebook" in the Command Palette, and then choose the "Create:New Jupyter Notebook" from the prompt. Don't forget to save the notebook in the folder you created for this tutorial. 
 
 #### Pre-requisites
 Python constantly evolves and progresses. Sometimes, it is challenging to obtain consistent experience running the notebook. To make sure the code will run smoothly no matter what version of python you newly installed, it is nice to learn how to establish python environment on your computer. So let's spend a few minutes first to learn how to create and activate a conda environment. 
