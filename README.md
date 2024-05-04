@@ -134,8 +134,10 @@ ImageJ supports a wide range of image formats, and can handle multi-dimensional 
 
 #### Install ImageJ 
 To install ImageJ, check this website [https://imagej.nih.gov/ij/download.html](https://imagej.nih.gov/ij/download.html)
-```markdown
-If you are mac user, you might need to enable installation of applications from unidentified developers by Apple. To do that, see this website https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac
+markdown
+If you are mac user, you might need to enable installation of applications from unidentified developers by Apple. To do that, see this website 
+```
+https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac
 ```
 
  The user interface of ImageJ looks like this:
