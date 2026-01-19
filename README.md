@@ -1,10 +1,10 @@
 <img src="./Images/AzureCustomVision.png" style = "width:100%;">
+Authors: Hang Hu  & [Luna Huang](https://github.com/lunayuehuang) 
 
 This tutorial is designed for our Big Data and Materials Informatics students to learn how to use Custom Vision. Custom Vision is one of the cognitive services provided by Microsoft Azure that enables users to easily build and train custom image classification or object detection models. With such Cloud tool, users can easliy use pretrained model to do supervised machine learning for their own image data without too much coding. This is a good example of how to use cognitive services on Azure, which is a collection of pre-build APIs that enable users to add intelligent features to their applilcations without needing to build the underlying AI models from scratch. 
 
 # Azure Custom Vision for Materials Science
 
-Authors: [Hang Hu](https://github.com/hanghu) & [Luna Huang](https://github.com/lunayuehuang) 
 
 Before getting started, git clone or download this repository (https://github.com/lunayuehuang/Mse544-CustomVision.git) to have all the test data on your local machine.
 
